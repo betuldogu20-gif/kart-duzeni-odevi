@@ -1,0 +1,149 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+img{
+    display: block;
+    max-width: 100%;
+}
+
+:root{
+    --clr-cyan: #45d3d3;
+    --clr-red: #ea5353;
+    --clr-orange: #fcaf4a;
+    --clr-blue: #549ef2;
+
+    --clr-heading: #4c4e61;
+    --clr-body: #a3a5ad;
+    --clr-bg: #fafafa;
+    --clr-card: #ffffff;
+
+    --ff-main: "Poppins", sans-serif;
+}
+
+body{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    font-family: var(--ff-main);
+    font-size: 15px;
+    font-weight: 300;
+    color: var(--clr-body);
+    background-color: var(--clr-bg);
+}
+
+.wrapper{
+    width: 100%;
+    max-width: 1110px;
+    margin-inline: auto;
+    padding: 4rem 1.5rem;
+    display: grid;
+    gap: 1.5rem;
+}
+
+.intro{
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.intro_title{
+    margin-bottom: 1rem;
+    font-size: 28px;
+    line-height: 1.3;
+    color: var(--clr-heading);
+}
+
+.intro_title-light,
+.intro_title-bold{
+    display: block;
+}
+
+.intro_title-light{font-weight: 300;}
+.intro_title-bold{font-weight: 600;}
+
+.intro_text{
+   max-width: 450px;
+   margin-inline: auto;
+   line-height: 1.6;
+}
+
+.card-supervisor,
+.card-team-builder,
+.card-karma,
+.card-calculator{
+    --accent: transparent;
+
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    background-color: var(--clr-card);
+    border-top: 4px solid var(--accent);
+    border-radius: 5px;
+    box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.1);
+}
+
+.card-supervisor {--accent: var(--clr-cyan)}
+.card-team-builder {--accent: var(--clr-red)}
+.card-karma {--accent: var(--clr-orange)}
+.card-calculator {--accent: var(--clr-blue)}
+
+.card_title{
+    margin-bottom: 0.75rem;
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--clr-heading);
+}
+
+.card_text{
+    margin-bottom: 2rem;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.card_icon{
+    width: 64px;
+    height: 64px;
+    margin: auto 0 0 auto;
+}
+
+@media (min-width: 1024px) {
+  .wrapper {
+    padding-block: 3rem;
+    gap: 30px;
+    grid-template-columns: repeat(3, 1fr);   /* 3 eşit sütun */
+  }
+
+  .intro {
+    grid-column: 1 / -1;
+    grid-row: 1;
+    margin-bottom: 3rem;
+  }
+
+  .intro_title {
+    font-size: 40px;
+  }
+
+  .card-supervisor {
+    grid-column: 1;
+    grid-row: 2 / 4;
+    align-self: center;
+  }
+
+  .card-team-builder {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  .card-karma {
+    grid-column: 2;
+    grid-row: 3;
+  }
+
+  .card-calculator {
+    grid-column: 3;
+    grid-row: 2 / 4;
+    align-self: center;
+  }
+}
